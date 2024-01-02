@@ -1,0 +1,211 @@
+// primary
+
+$lightRed: hsl(0, 100%, 67%);
+$orangeyYellow: hsl(39, 100%, 56%);
+$greenTeal: hsl(166, 100%, 37%);
+$cobaltBlue: hsl(234, 85%, 45%);
+
+// Neutral
+
+$white: hsl(0, 0%, 100%);
+$paleBlue: hsl(221, 100%, 96%);
+$lightLavender: hsl(241, 100%, 89%);
+$darkGrayBlue: hsl(224, 30%, 27%);
+
+// font
+$font: "Hanken Grotesk";
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  min-width: 600px;
+  display: flex;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 25px;
+}
+
+.card {
+  text-align: center;
+  background-image: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+  padding-right: 45px;
+  padding-left: 45px;
+  border-radius: 25px;
+}
+
+.card__result {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  font-family: "Hanken Grotesk";
+  color: $lightLavender;
+  font-size: 1.1em;
+}
+
+.card__circle {
+  background-image: linear-gradient(hsla(256, 72%, 46%, 1), hsla(241, 72%, 46%, 0));
+  border-radius: 50%;
+  height: 150px;
+  width: 155px;
+  margin: auto;
+}
+
+.card__score {
+  padding-top: 30px;
+}
+
+.card__score span {
+  font-family: $font;
+  font-weight: 800;
+  color: $white;
+  font-size: 3rem;
+}
+
+.card__score p {
+  font-family: $font;
+  color: $lightLavender;
+  opacity: 0.4;
+}
+
+.card__note {
+  padding: 20px 0 20px;
+  font-size: 1.75rem;
+  font-family: $font;
+  color: $white;
+}
+
+.card__paragraph {
+  width: 200px;
+  color: $white;
+  opacity: 0.6;
+  font-family: $font;
+  font-weight: 500;
+  font-size: 0.85rem;
+  padding-bottom: 3em;
+}
+
+// summary
+
+.summary {
+  margin: 7%;
+}
+
+.stext {
+  font-family: $font;
+  color: $darkGrayBlue;
+  margin-bottom: 1em;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.things {
+  text-indent: 10px;
+  font-family: $font;
+}
+
+@mixin stadistics($color: white, $backgroundColor: white) {
+  color: $color;
+  display: flex;
+  align-items: center;
+  margin-bottom: 2em;
+  background-color: $backgroundColor;
+  border-radius: 15px;
+  padding: 5px;
+}
+
+.reaction {
+  @include stadistics($lightRed, hsla(0, 100%, 67%, 0.1));
+}
+
+.memory {
+  @include stadistics($orangeyYellow, (hsl(39, 100%, 56%, 0.1)));
+}
+
+.verbal {
+  @include stadistics($greenTeal, (hsl(166, 100%, 37%, 0.1)));
+}
+
+.visual {
+  @include stadistics($cobaltBlue, (hsl(234, 85%, 45%, 0.1)));
+  margin-bottom: 2em;
+}
+
+.things p {
+  width: 125px;
+}
+
+.numbers {
+  width: 5rem;
+  color: black;
+  font-weight: 500;
+}
+
+.numbers span {
+  color: grey;
+}
+
+.continue {
+  display: flex;
+  font-family: $font;
+  justify-content: center;
+  color: white;
+  background-color: $darkGrayBlue;
+  padding: 5%;
+  border-radius: 50px;
+}
+
+.continue:hover {
+  background-image: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+  cursor: pointer;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 725px) {
+  .wrapper {
+    display: grid;
+    min-width: 100vw;
+    min-height: 100vh;
+  }
+  .card {
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+  }
+
+  .card__paragraph {
+    width: 80%;
+    margin: auto;
+  }
+  .things p {
+    width: 55vw;
+  }
+  .reaction {
+    padding: 2.67vw;
+  }
+  .memory {
+    padding: 2.67vw;
+  }
+  .verbal {
+    padding: 2.67vw;
+  }
+  .visual {
+    padding: 2.67vw;
+  }
+  .stext {
+    display: flex;
+    justify-content: center;
+  }
+}
